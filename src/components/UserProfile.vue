@@ -2,7 +2,7 @@
     <div class="flex flex-col items-center">
         <h2 class="text-2xl mb-4">ユーザープロフィール</h2>
         <div v-if="user">
-            <p><strong>ユーザー名:</strong> {{ user.username }}</p>
+            <p><strong>ユーザー名:</strong> {{ user.user_name }}</p>
             <p><strong>メール:</strong> {{ user.email }}</p>
             <button @click="handleLogout" class="mt-4 p-2 bg-red-500 text-white">ログアウト</button>
         </div>
@@ -14,13 +14,18 @@
 </template>
 
 <script lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, Ref, defineComponent } from 'vue';
 import { getProfile, logout } from '../services/authService'; // ユーザー情報取得とログアウトサービスをインポート
 import { useRouter } from 'vue-router';
 
-export default {
+interface User {
+    user_name: string;
+    email: string;
+}
+
+export default defineComponent({
     setup() {
-        const user = ref(null);
+        const user: Ref<User | null> = ref(null);
         const router = useRouter();
 
         // ユーザー情報を取得する
@@ -51,7 +56,7 @@ export default {
             handleLogout,
         };
     },
-};
+});
 </script>
 
 <style scoped>

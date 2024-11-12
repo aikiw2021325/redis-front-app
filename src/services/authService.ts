@@ -13,11 +13,7 @@ interface createUser {
 
 export const login = async (user: User) => {
     try {
-        const response = await apiClient.post('/api/login', user, {
-            headers: {
-                'Content-Type': 'application/json',  // コンテンツタイプを設定
-            },
-        });
+        const response = await apiClient.post('/login', user);
         console.log("response:");
         console.log(response);
         return response.data;

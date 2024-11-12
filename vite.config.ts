@@ -7,11 +7,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "http://192.168.11.9:8080",
-        changeOrigin: true,               // オリジンをターゲットに合わせて変更
-        secure: false,                    // HTTPSの場合はtrue。HTTPならfalse
-        rewrite: (path) => path.replace('/api', ''), // APIパスをバックエンドに合わせる
+        target: 'http://192.168.24.38:8080',  // FastAPIのURL
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
-    },
+    }
   },
 })
