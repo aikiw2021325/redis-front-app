@@ -7,6 +7,7 @@
             <input v-model="email" type="mail" placeholder="メールアドレス" class="p-2 border" />
             <button type="submit" class="p-2 bg-green-500 text-white">アカウント作成</button>
         </form>
+        <router-link to="/" class="py-2 text-blue-500">ホームページ</router-link>
     </div>
 </template>
 

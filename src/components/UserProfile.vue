@@ -7,8 +7,9 @@
             <button @click="handleLogout" class="mt-4 p-2 bg-red-500 text-white">ログアウト</button>
         </div>
         <div v-else>
-            <p>ログインしてください。</p>
-            <router-link to="/login" class="text-blue-500">ログインページへ</router-link>
+            <router-link to="/login" class="py-2 text-blue-500">ログインページへ</router-link>
+            <br>
+            <router-link to="/signup" class="py-2 text-blue-500">新規作成ページへ</router-link>
         </div>
     </div>
 </template>
