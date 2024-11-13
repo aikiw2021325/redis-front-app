@@ -14,6 +14,7 @@
 import { defineComponent, ref } from 'vue';
 import { login } from '../services/authService';
 
+
 export default defineComponent({
     setup() {
         const username = ref('');
@@ -22,11 +23,9 @@ export default defineComponent({
         const handleLogin = async () => {
             try {
                 const user = { username: username.value, password: password.value };
-                const response = await login(user);
-                console.log(response);
-
-                alert('ログイン成功');
-            } catch (error) {
+                await login(user);
+                alert('ログインに成功しました');
+            } catch (error:any) {
                 alert('ログインに失敗しました');
             }
         };

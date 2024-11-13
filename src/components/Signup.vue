@@ -26,7 +26,7 @@ export default defineComponent({
                 const user = { username: username.value, password: password.value, email: email.value };
                 await createUser(user);
                 alert('アカウントが作成されました');
-            } catch (error) {
+            } catch (error:any) {
                 alert('アカウント作成に失敗しました');
             }
         };

@@ -34,7 +34,7 @@ export default defineComponent({
             try {
                 const userData = await getProfile();
                 user.value = userData;
-            } catch (error) {
+            } catch (error:any) {
                 console.log('ユーザー情報の取得に失敗しました', error);
             }
         };
